@@ -1,6 +1,6 @@
 {
   "name": "balena-cli",
-  "version": "12.1.16",
+  "version": "12.2.0",
   "description": "The official balena CLI tool",
   "main": "./build/app.js",
   "homepage": "https://github.com/balena-io/balena-cli",
@@ -57,7 +57,7 @@
     "release": "ts-node --transpile-only automation/run.ts release",
     "pretest": "npm run build",
     "test": "npm run test:source && npm run test:standalone",
-    "test:source": "mocha --timeout 6000 -r ts-node/register/transpile-only -b \"tests/**/*.spec.ts\"",
+    "test:source": "mocha --timeout 6000 -r ts-node/register/transpile-only \"tests/**/*.spec.ts\"",
     "test:standalone": "npm run build:standalone && cross-env BALENA_CLI_TEST_TYPE=standalone npm run test:source",
     "test:standalone:fast": "cross-env BALENA_CLI_TEST_TYPE=standalone npm run test:source",
     "test:fast": "npm run build:fast && mocha --timeout 6000 -r ts-node/register/transpile-only \"tests/**/*.spec.ts\"",
